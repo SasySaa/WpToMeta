@@ -3,7 +3,7 @@ const axios = require('axios');
 
 // Funzione principale per gestire il flusso
 async function getRandomPostLink(categoryId) {
-    const apiUrl = `https://maestragiulia.net/wp-json/wp/v2/posts?categories=${categoryId}`;
+    const apiUrl = `${process.env.website}/wp-json/wp/v2/posts?categories=${categoryId}`;
     try {
         const response = await axios.get(apiUrl);
         const posts = response.data;
